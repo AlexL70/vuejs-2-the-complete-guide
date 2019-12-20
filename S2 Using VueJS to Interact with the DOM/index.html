@@ -11,7 +11,7 @@
   <div id="app">
     <input type="text" v-on:input="changeTitle">
     <p>
-      {{title}}
+      {{sayHello()}}
     </p>
   </div>
 
@@ -24,6 +24,9 @@
       methods: {
         changeTitle: function(event) {
           this.title = event.target.value;
+        },
+        sayHello: function(){
+          return "Hello!";
         }
       }
     });
