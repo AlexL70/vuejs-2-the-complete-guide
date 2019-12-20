@@ -10,20 +10,35 @@
 <body>
     <div id="exercise">
         <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
-        <p>VueJS is pretty cool - YOUR_NAME (AGE)</p>
+        <p>VueJS is pretty cool - {{ your_name }} ({{ your_age }})</p>
         <!-- 2) Output your age, multiplied by 3 -->
-        <p></p>
+        <p> {{ tripleAge() }}</p>
         <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
-        <p></p>
+        <p>{{ Math.random(0,1)}}</p>
         <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
         <div>
-            <img style="width:100px;height:100px">
+            <img v-bind:src="carrera_link" style="width:100px;height:100px">
         </div>
         <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
         <div>
-            <input type="text">
+            <input type="text" v-bind:value="your_name">
         </div>
     </div>
+    <script>
+        new Vue({
+            el: '#exercise',
+            data: {
+                your_name: 'Alexander Levinson',
+                your_age: 49,
+                carrera_link: "https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/mosaic_default_v2/public/media/image/2019/06/porsche-911-carrera-rs-1973_7.jpg?itok=VDRR5vF2"
+            },
+            methods: {
+                tripleAge: function() {
+                    return this.your_age * 3;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 
