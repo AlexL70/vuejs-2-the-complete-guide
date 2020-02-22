@@ -10,8 +10,14 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="name">
-        <p>{{ name }}</p>
+        <button v-on:click="counter++">Increase</button>
+        <button v-on:click="counter--">Decrease</button>
+        <button v-on:click="secondCounter++">Increase second</button>
+        <button v-on:click="secondCounter--">Decrease second</button>
+        <p>Counter: {{ counter }}</p>
+        <p>Secound counter: {{ secondCounter }}</p>
+        <p>Result: {{ output }}</p>
+        <p>Constant: {{ outputSecond() }}</p>
     </div>
 </body>
 </html>
